@@ -1,0 +1,9 @@
+<h3>Total entries: {{nb_in}} | Total exits: {{nb_out}} | Total left inside: {{nb_still_in}}</h3>
+
+{% for obj in all_items  %}
+    {% if obj.isEntry %}
+        <p>Client entré le {{ obj.time }}</br></p>
+    {% else %}
+        <p>Client sorti le {{ obj.time }}</br></p>
+    {% endif %}
+{% endfor %}
