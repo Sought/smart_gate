@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests
 import os
 from pynput.keyboard import Key, Listener
