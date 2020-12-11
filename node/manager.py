@@ -5,9 +5,6 @@ from pynput.keyboard import Key, Listener
 url = os.environ.get('URL')
 if not url:
     url = "http://127.0.0.1:8000/data/entry/"
-token = os.environ.get('TOKEN')
-if not token:
-    token = "1234"
 mode = True
 cap1 = True
 cap2 = True
@@ -23,14 +20,13 @@ def on_release(key):
         global mode
         global crossing
         global url
-        global token
         if key.char == "s":
             cap1 = not cap1
             if mode and not cap1 and not crossing:
                 crossing = True
             if not mode and cap1 and crossing:
                 crossing = False
-                requests.post(url, json={"isEntry": False, "token": token})
+                requests.post(url, json={"isEntry": False})
                 print("\n|-1|")
         elif key.char == "e":
             cap2 = not cap2
@@ -38,7 +34,7 @@ def on_release(key):
                 crossing = True
             if mode and cap2 and crossing:
                 crossing = False
-                requests.post(url, json={"isEntry": True, "token": token})
+                requests.post(url, json={"isEntry": True})
                 print("\n|+1|")
         elif key.char == "m":
             mode = not mode
