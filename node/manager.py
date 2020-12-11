@@ -4,7 +4,7 @@ from pynput.keyboard import Key, Listener
 
 url = os.environ.get('URL')
 if not url:
-    url = "http://127.0.0.1:8000/entry/"
+    url = "http://127.0.0.1:8000/data/entry/"
 token = os.environ.get('TOKEN')
 if not token:
     token = "1234"
