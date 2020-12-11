@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 back_end/Pipfile.lock
+
+server/Pipfile.lock
